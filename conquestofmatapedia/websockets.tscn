@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://c6luxgvcss0er"]
+
+[ext_resource type="Script" path="res://websockets.gd" id="1_ase2a"]
+[ext_resource type="Script" path="res://background.gd" id="2_sfbtx"]
+[ext_resource type="Texture2D" uid="uid://ceyiwuhcjnrws" path="res://background.webp" id="3_myqlm"]
+[ext_resource type="Texture2D" uid="uid://yrw2t5tafgj" path="res://cropped_creature_152.png" id="4_54iqk"]
+[ext_resource type="Texture2D" uid="uid://dp1yuqqf1l81f" path="res://cropped_creature_153.png" id="5_3gbme"]
+[ext_resource type="Texture2D" uid="uid://7ybg6t6bqsnd" path="res://cropped_creature_260.png" id="6_ek481"]
+[ext_resource type="Texture2D" uid="uid://2wju1rn4rf04" path="res://cropped_creature_138.png" id="7_13fbw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3yl5i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_54iqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3gbme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ek481")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_13fbw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ase2a")
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("2_sfbtx")
+background_texture = ExtResource("3_myqlm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(204, 494)
+scale = Vector2(0.489474, 0.489474)
+sprite_frames = SubResource("SpriteFrames_3yl5i")
+autoplay = "default"
+frame = 2
+frame_progress = 0.660908
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+position = Vector2(1190.3, -191.071)
+scale = Vector2(1.01893, 1.01893)
+sprite_frames = SubResource("SpriteFrames_3yl5i")
+autoplay = "default"
+frame = 2
+frame_progress = 0.660908
